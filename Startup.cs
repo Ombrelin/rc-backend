@@ -146,6 +146,14 @@ namespace RencontreContemporainesAPI
                 options.RoutePrefix = "";
             });
             app.UseRouting();
+            
+            app.UseCors(cors =>
+            {
+                cors.AllowAnyOrigin();
+                cors.AllowAnyMethod();
+                cors.AllowAnyHeader();
+            });
+            
             app.UseAuthentication();
             app.UseAuthorization();
 
