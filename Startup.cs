@@ -150,6 +150,16 @@ namespace RencontreContemporainesAPI
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            
+            using (var serviceScope = app.ApplicationServices
+                .GetRequiredService<IServiceScopeFactory>()
+                .CreateScope())
+            {
+                using (var context = serviceScope.ServiceProvider.GetService<ApplicationDbContext>())
+                {
+                    context.Database.Migrate();
+                }
+            }
         }
         
         private string GetPostgresConnectionString()

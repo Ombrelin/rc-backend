@@ -23,3 +23,9 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+    - name: Build the Docker image
+      run: docker build -t ombrelin/rc-backend:lastest . --file Dockerfile
+    - name: Docker login
+      run: echo '${{ secrets.DOCKER_TOKEN }}' | docker login --username ombrelin --password-stdin
+    - name: Publish to Docker hub
+      run: docker push ombrelin/rc-backend:latest
