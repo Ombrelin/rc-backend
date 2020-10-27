@@ -1,9 +1,10 @@
-﻿using RencontreContemporainesAPI.Models.Base;
+﻿using System;
+using RencontreContemporainesAPI.Models.Base;
 
 namespace RencontreContemporainesAPI.Models
 {
     public class Atelier : BaseEntity
     {
-        
+        public DateTime DateTime { get; set; }
     }
 }
