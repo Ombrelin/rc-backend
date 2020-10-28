@@ -5,6 +5,6 @@ namespace RencontreContemporainesAPI.Models
 {
     public class Atelier : BaseEntity
     {
-        public DateTime DateTime { get; set; }
+        public DateTime Date { get; set; }
     }
 }

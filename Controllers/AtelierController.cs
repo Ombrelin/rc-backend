@@ -25,13 +25,14 @@ namespace RencontreContemporainesAPI.Controllers
         [AllowAnonymous]
         [ProducesResponseType(typeof(List<Atelier>), StatusCodes.Status200OK)]
         public IActionResult GetAteliers() => Ok(service.GetAll());
+        
 
         [HttpPost]
         [ProducesResponseType(typeof(Atelier), StatusCodes.Status201Created)]
         public IActionResult CreateAtelier([FromBody] Atelier atelier)
         {
             service.Insert(atelier);
-            return Created($"api/Ateliers/{atelier.Id}",atelier);
+            return Ok(atelier);
         }
 
         [HttpDelete("{atelierId:Guid}")]
