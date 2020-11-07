@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -24,7 +25,7 @@ namespace RencontreContemporainesAPI.Controllers
         [HttpGet]
         [AllowAnonymous]
         [ProducesResponseType(typeof(List<Atelier>), StatusCodes.Status200OK)]
-        public IActionResult GetAteliers() => Ok(service.GetAll());
+        public IActionResult GetAteliers() => Ok(service.GetAll().OrderBy(a => a.Date).ToList());
         
 
         [HttpPost]
