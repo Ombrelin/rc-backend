@@ -149,8 +149,7 @@ namespace RencontreContemporainesAPI
             
             app.UseCors(cors =>
             {
-                cors.WithOrigins("http://localhost:4200")
-                    .WithOrigins("https://rencontres-contemporaines.com")
+                cors.AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader();
             });
