@@ -10,8 +10,8 @@ using RencontreContemporainesAPI.Database;
 namespace RencontreContemporainesAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200822171327_initial")]
-    partial class initial
+    [Migration("20201107181718_resetDB")]
+    partial class resetDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,6 +28,9 @@ namespace RencontreContemporainesAPI.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("Created")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime>("Date")
                         .HasColumnType("timestamp without time zone");
 
                     b.HasKey("Id");

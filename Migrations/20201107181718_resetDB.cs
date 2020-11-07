@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RencontreContemporainesAPI.Migrations
 {
-    public partial class fixDate : Migration
+    public partial class resetDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
