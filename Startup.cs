@@ -138,8 +138,7 @@ namespace RencontreContemporainesAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseHttpsRedirection();
+            
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
