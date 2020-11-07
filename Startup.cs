@@ -38,7 +38,6 @@ namespace RencontreContemporainesAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
-            
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped(typeof(ICrudService<>), typeof(CrudService<>));
             services.AddScoped<IFilesService,FilesService>();
@@ -151,9 +150,11 @@ namespace RencontreContemporainesAPI
             
             app.UseCors(cors =>
             {
-                cors.AllowAnyOrigin();
-                cors.AllowAnyMethod();
-                cors.AllowAnyHeader();
+                cors.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true)
+                .AllowCredentials();
             });
             
             app.UseAuthentication();
