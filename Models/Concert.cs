@@ -7,7 +7,9 @@ namespace RencontreContemporainesAPI.Models
     {
         public string Title { get; set; }
         public DateTime? DateTime { get; set; }
+        public Boolean DateSure { get; set; }
         public string Location { get; set; }
+        public Boolean LocationSure { get; set; }
         public string Artist { get; set; }
         public string Description { get; set; }
         public Guid Image { get; set; }
