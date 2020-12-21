@@ -15,12 +15,6 @@ namespace RencontreContemporainesAPI.Services
 {
     public class UserService : IUserService
     {
-        private readonly AppSettings appSettings;
-
-        public UserService(IOptions<AppSettings> appSettings, IRepository<User> userRepository)
-        {
-            this.appSettings = appSettings?.Value;
-        }
 
         public User Authenticate(string username, string password)
         {
@@ -36,7 +30,7 @@ namespace RencontreContemporainesAPI.Services
             }
 
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+            var key = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("JWT_SECRET"));
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]
