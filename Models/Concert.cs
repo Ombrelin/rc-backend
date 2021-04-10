@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using RencontreContemporainesAPI.Models.Base;
 
 namespace RencontreContemporainesAPI.Models
@@ -7,6 +8,7 @@ namespace RencontreContemporainesAPI.Models
     {
         public string Title { get; set; }
         public DateTime? DateTime { get; set; }
+        public List<TimeSpan> Hours { get; set; }
         public Boolean DateSure { get; set; }
         public string Location { get; set; }
         public Boolean LocationSure { get; set; }
