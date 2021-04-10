@@ -16,5 +16,6 @@ namespace RencontreContemporainesAPI.Models
         public string Description { get; set; }
         public Guid Image { get; set; }
         public Guid Flyer { get; set; }
+        public string DateFormat { get; set; }
     }
 }
