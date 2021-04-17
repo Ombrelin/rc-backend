@@ -45,10 +45,10 @@ namespace RencontreContemporainesAPI.Controllers
 
         [HttpPut("{concertId:Guid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult UpdateConcert(Guid concertId, [FromBody] Concert concert)
+        public ActionResult<Concert> UpdateConcert(Guid concertId, [FromBody] Concert concert)
         {
             service.Update(concert);
-            return Ok();
+            return Ok(concert);
         }
     }
 }
