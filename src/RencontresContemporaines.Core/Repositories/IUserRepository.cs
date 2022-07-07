@@ -2,7 +2,7 @@
 
 namespace RencontresContemporaines.Core.Repositories;
 
-public interface UserRepository : IRepository<User>
+public interface IUserRepository : IRepository<User>
 {
     Task<User> GetByUsername(string username);
 }

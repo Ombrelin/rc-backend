@@ -1,4 +1,3 @@
-﻿obj
-bin
-out
-.idea
+﻿.idea
+**/obj
+**/bin
